@@ -48,5 +48,10 @@ client.on('message', msg => {
     }
 });
 
-client.login("NjEzODY2NTUxODAzOTA0MDAw.XV3q2w.aKkUjd9sM2GaNYxBi56j5gn0gFU");
-console.log("logged in correctly! Awaiting commands");
+try {
+    let data = fs.readFileSync('secret.txt', 'utf8');
+    client.login(data);  
+    console.log("logged in correctly! Awaiting commands");
+} catch(e) {
+    console.log('Error:', e.stack);
+}
