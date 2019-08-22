@@ -1,3 +1,9 @@
+/*
+
+    Contains the implementation of each command, accessed by string name.
+    Add new commands by adding them to the exports
+
+*/
 module.exports = 
 {
     rotate: function(chain, commandQueue)

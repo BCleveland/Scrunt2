@@ -17,17 +17,15 @@ client.on('message', msg => {
         while(commandQueue.length > 0)
         {
             let command = commandQueue.shift();
-            switch(command)
+            try
             {
-                case "rotate":
-                    com.rotate(chain, commandQueue);
-                    break;
-                case "wave":
-                    com.wave(chain, commandQueue);
-                    break;
-                default:
-                    msg.channel.send("Unknown command " + command);
-                    return;
+                //calls command by string name
+                com[command](chain, commandQueue);
+            }
+            catch(e)
+            {
+                msg.channel.send("Failed Command: " + command);
+                console.error(e);
             }
         }
         //Step 3: write to buffer and send
@@ -35,7 +33,7 @@ client.on('message', msg => {
         {
             if (!err)
             {
-                console.log('done!');
+                console.log('Image Processed!');
                 msg.channel.send({
                     files: [buffer]
                   });
