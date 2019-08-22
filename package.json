@@ -1,0 +1,17 @@
+{
+  "name": "scrunt2",
+  "version": "1.0.0",
+  "description": "scrunt, two",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "express": "^4.17.1",
+    "gm": "^1.23.1",
+    "request": "^2.88.0"
+  }
+}
